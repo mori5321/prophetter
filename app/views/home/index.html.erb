@@ -1,9 +1,38 @@
-<div class="uk-child-width-1-2@s" uk-grid>
-  <div>
-    <div class="uk-dark uk-background-muted uk-padding">
-      <h5>2018-01-01</h5>
-      <p>ScalaでRESTAPIをつくる</p>
-      <!-- <button class="uk-button uk-button-default">Button</button> -->
+<div class="uk-section uk-section-default">
+  <div class="uk-container">
+    <h2 class="uk-text-center">「◯◯達成した。」</h2>
+    <p class="uk-text-center">Twitterで目標達成を予言しよう。</p>
+    <div class="uk-text-center uk-margin">
+      <%= link_to "予言する", new_prophet_path, class: "uk-button uk-button-secondary uk-width-1-2 uk-width-1-3@m" %>
     </div>
   </div>
+</div>
+
+
+<div class="uk-container-xsmall uk-container uk-margin-large uk-width-2-3@m">
+  <% if user_signed_in? %>
+    <h4 class="uk-heading-line uk-text-center"><span>あなたの予言</span></h4>
+
+    <div>
+      <% current_user.prophets.each do |prophet| %>
+        <div class="uk-dark uk-background-muted uk-padding-small uk-margin">
+          <h5>2018-01-01</h5>
+          <p><%= prophet.text %></p>
+          <!-- <button class="uk-button uk-button-default">Button</button> -->
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <h4 class="uk-heading-line uk-text-center"><span>みんなの予言</span></h4>
+
+    <div>
+      <% @prophets.each do |prophet| %>
+        <div class="uk-dark uk-background-muted uk-padding-small uk-margin">
+          <h5>2018-01-01</h5>
+          <p><%= prophet.text %></p>
+          <!-- <button class="uk-button uk-button-default">Button</button> -->
+        </div>
+      <% end %>
+    </div>
+  <% end %>
 </div>

@@ -1,12 +1,12 @@
-<nav class="uk-light uk-background-primary" uk-navbar>
+<nav class="uk-navbar uk-padding-small uk-padding-remove-vertical" uk-navbar>
   <div class="uk-navbar-left">
-    <a class="uk-navbar-item uk-logo" href="#">Prophetter</a>
+    <a class="uk-navbar-item uk-logo" href="/">Prophetter</a>
   </div>
   <div class="uk-navbar-right">
     <ul class="uk-navbar-nav">
       <li class="uk-active">
         <% if user_signed_in?  %>
-          <%= image_tag current_user.image_url %>
+          <%= image_tag current_user.image_url, class: "avatar" %>
         <% else %>
           <%= link_to 'Twitterでログイン', "/auth/twitter" %>
         <% end %>
