@@ -17,6 +17,6 @@ class Prophet < ApplicationRecord
 
   private
     def tweet_text
-      "#{self.text} \n\n prophetted in #{formatted_date_with_wday(self.created_at)} \n #profetter https://prophetter.herokuapp.com/"
+      "#{self.text} \n\n prophetted in #{formatted_date_with_wday(self.created_at)} \n #prophetter https://prophetter.herokuapp.com/"
     end
 end
