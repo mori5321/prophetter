@@ -7,8 +7,10 @@
   <div>
     <% if user_signed_in? && prophet.user_id == current_user.id %>
       <div class="uk-margin-small">
-        <span uk-icon="icon: pencil; ratio: 1.2" class="uk-margin-small-right"></span>
-        <span uk-icon="icon: trash; ratio: 1.2"></span>
+        <!-- <span uk-icon="icon: pencil; ratio: 1.2" class="uk-margin-small-right"></span> -->
+        <%= link_to prophet_path(prophet), method: :delete, data: { confirm: "削除します。よろしいですか?" } do %>
+          <span uk-icon="icon: trash; ratio: 1.2" class="uk-text-muted"></span>
+        <% end %>
       </div>
     <% end %>
   </div>

@@ -4,9 +4,9 @@
     <p class="uk-text-center">Twitterで目標達成を予言しよう。</p>
     <div class="uk-text-center uk-margin">
       <% if user_signed_in? %>
-        <%= link_to "予言する", new_prophet_path, class: "uk-button uk-button-secondary uk-width-1-2 uk-width-1-3@m" %>
+        <%= link_to "予言する", new_prophet_path, class: "uk-button uk-button-secondary uk-width-1-2 uk-width-1-3@m round-button" %>
       <% else %>
-        <%= link_to "Twitterでログイン", "/auth/twitter", class: "uk-button uk-button-secondary uk-width-1-2 uk-width-1-3@m" %>
+        <%= link_to "Twitterでログイン", "/auth/twitter", class: "uk-button uk-button-secondary uk-width-1-2 uk-width-1-3@m round-button" %>
       <% end  %>
     </div>
   </div>
@@ -20,7 +20,7 @@
     <p class="uk-text-center uk-text-small">それまでにがんばって達成しましょう</p>
 
     <div>
-      <%= render partial: "/prophets/prophet", collection: current_user.prophets %>
+      <%= render partial: "/prophets/prophet", collection: @users_prophets %>
     </div>
   <% else %>
     <h4 class="uk-heading-line uk-text-center"><span>みんなの予言</span></h4>
@@ -28,7 +28,7 @@
     <p class="uk-text-center uk-text-small">それまでにがんばって達成しましょう</p>
 
     <div>
-      <%= render partial: "/prophets/prophet", collection: @prophets %>
+      <%= render partial: "/prophets/prophet", collection: @all_prophets %>
     </div>
   <% end %>
 </div>

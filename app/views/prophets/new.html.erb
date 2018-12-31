@@ -14,14 +14,15 @@
         </div>
 
         <div class="uk-margin">
-          <%= f.label :text, "予言ツイート", class: "uk-form-label" %>
+          <%= f.label :text, "予言ツイート(200文字まで)", class: "uk-form-label" %>
+          <small>※達成することを過去形で書きましょう</small>
           <div>
-            <%= f.text_area :text, class: "uk-textarea", rows: 4, required: true, placeholder: placeholder %>
+            <%= f.text_area :text, class: "uk-textarea", rows: 4, required: true, placeholder: placeholder, maxlength: 200  %>
           </div>
         </div>
 
         <div class="uk-margin uk-flex uk-flex-center">
-          <%= f.submit '予言する', class: "uk-button uk-button-secondary" %>
+          <%= f.submit '投稿予約', class: "uk-button uk-button-secondary round-button" %>
         </div>
       </fieldset>
     <% end %>

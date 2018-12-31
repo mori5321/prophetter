@@ -10,7 +10,15 @@ class ProphetsController < ApplicationController
     else
       redirect_to root_path
     end
+  end
 
+  def destroy
+    @prophet = Prophet.find(params[:id])
+    if @prophet.destroy
+      redirect_to root_path
+    else
+      redirect_to root_path
+    end
   end
 
   private

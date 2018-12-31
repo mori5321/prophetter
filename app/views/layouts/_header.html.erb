@@ -6,7 +6,21 @@
     <ul class="uk-navbar-nav">
       <li class="uk-active">
         <% if user_signed_in?  %>
-          <%= image_tag current_user.image_url, class: "avatar" %>
+          <div class="uk-inline">
+            <%= link_to "予言する", new_prophet_path, class: "uk-button uk-button-default uk-text-default", style: "border-radius: 20px;" %>
+            <%= image_tag current_user.image_url, class: "avatar " %>
+            <div uk-dropdown="mode: click">
+              <ul class="uk-nav uk-dropdown-nav">
+                <li class="uk-active"><a href="#">Active</a></li>
+                <li><a href="#">Item</a></li>
+                <li class="uk-nav-header">Header</li>
+                <li><a href="#">Item</a></li>
+                <li><a href="#">Item</a></li>
+                <li class="uk-nav-divider"></li>
+                <li><%= link_to "Sign Out", "/logout" %></li>
+              </ul>
+            </div>
+          </div>
         <% else %>
           <%= link_to 'Twitterでログイン', "/auth/twitter" %>
         <% end %>
