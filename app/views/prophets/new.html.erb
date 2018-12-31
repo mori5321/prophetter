@@ -7,7 +7,7 @@
           <%= f.label :published_at, "達成予定", class: "uk-form-label" %>
           <small>※この日時にTweetが自動投稿されます</small>
           <div>
-            <%= f.datetime_field :published_at, required: true, id: "calendar" %>
+            <%= f.text_field :published_at, required: true, id: "calendar" %>
           </div>
         </div>
 
@@ -29,11 +29,11 @@
 
 
 <script>
-window.onload = function() {
-  flatpickr("#calendar", {
-    enableTime: true,
-    time_24hr: true,
-    minDate: "today"
-  });
-}
+
+flatpickr("#calendar", {
+  enableTime: true,
+  time_24hr: true,
+  minDate: "today"
+});
+
 </script>
