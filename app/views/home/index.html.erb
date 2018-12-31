@@ -17,7 +17,7 @@
 
 <div class="uk-container-xsmall uk-container uk-margin-large uk-width-2-3@m">
   <% if user_signed_in? %>
-    <h4 class="uk-heading-line uk-text-center"><span>あなたの予言</span></h4>
+    <h4 class="uk-heading-line uk-text-center"><span>あなたのProphet</span></h4>
     <p class="uk-text-center uk-text-small">達成予定日に自動でツイートされます</p>
     <p class="uk-text-center uk-text-small">それまでにがんばって達成しましょう</p>
 
@@ -25,7 +25,7 @@
       <%= render partial: "/prophets/prophet", collection: @users_prophets %>
     </div>
   <% else %>
-    <h4 class="uk-heading-line uk-text-center"><span>みんなの予言</span></h4>
+    <h4 class="uk-heading-line uk-text-center"><span>みんなのProphet</span></h4>
     <p class="uk-text-center uk-text-small">達成予定日に自動でツイートされます</p>
     <p class="uk-text-center uk-text-small">それまでにがんばって達成しましょう</p>
 
