@@ -20,8 +20,10 @@
 # Learn more: http://github.com/javan/whenever
 
 
-set :environment, :production
 
-every 3.minutes do
-  runner "ProphetterCronService.exec!"
-end
+# Heroku Schedulerを使用
+# set :environment, :production
+
+# every 3.minutes do
+#   runner "ProphetterCronService.exec!"
+# end
