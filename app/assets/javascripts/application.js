@@ -12,5 +12,5 @@
 //
 //= require rails-ujs
 //= require activestorage
-//= require uikit
+
 //= require_tree .

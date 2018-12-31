@@ -1,3 +1,5 @@
+<% placeholder = "TOEIC模試で900点がとれるようになった！\n" %>
+
 
 <div class="uk-container-xsmall uk-container uk-padding uk-padding-remove-vertical uk-width-2-3@s">
   <div class="uk-margin-top">
@@ -14,10 +16,9 @@
         <div class="uk-margin">
           <%= f.label :text, "予言ツイート", class: "uk-form-label" %>
           <div>
-            <%= f.text_area :text, class: "uk-textarea", rows: 4, required: true %>
+            <%= f.text_area :text, class: "uk-textarea", rows: 4, required: true, placeholder: placeholder %>
           </div>
         </div>
-
 
         <div class="uk-margin uk-flex uk-flex-center">
           <%= f.submit '予言する', class: "uk-button uk-button-secondary" %>

@@ -18,25 +18,13 @@
     <h4 class="uk-heading-line uk-text-center"><span>あなたの予言</span></h4>
 
     <div>
-      <% current_user.prophets.each do |prophet| %>
-        <div class="uk-dark uk-background-muted uk-padding-small uk-margin">
-          <h5><%= prophet.published_at %></h5>
-          <p><%= prophet.text %></p>
-          <!-- <button class="uk-button uk-button-default">Button</button> -->
-        </div>
-      <% end %>
+      <%= render partial: "/prophets/prophet", collection: current_user.prophets %>
     </div>
   <% else %>
     <h4 class="uk-heading-line uk-text-center"><span>みんなの予言</span></h4>
 
     <div>
-      <% @prophets.each do |prophet| %>
-        <div class="uk-dark uk-background-muted uk-padding-small uk-margin">
-          <h5><%= prophet.published_at %></h5>
-          <p><%= prophet.text %></p>
-          <!-- <button class="uk-button uk-button-default">Button</button> -->
-        </div>
-      <% end %>
+      <%= render partial: "/prophets/prophet", collection: @prophets %>
     </div>
   <% end %>
 </div>

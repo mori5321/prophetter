@@ -1,0 +1,15 @@
+<div class="uk-dark uk-background-muted uk-padding-small uk-margin uk-flex uk-flex-between">
+  <div>
+    <p><%= prophet.text %></p>
+    <div><small><%= formatted_date_with_wday(prophet.published_at) %></small></div>
+    <div><small><%= prophet.user.name %></small></div>
+  </div>
+  <div>
+    <% if user_signed_in? && prophet.user_id == current_user.id %>
+      <div class="uk-margin-small">
+        <span uk-icon="icon: pencil; ratio: 1.2" class="uk-margin-small-right"></span>
+        <span uk-icon="icon: trash; ratio: 1.2"></span>
+      </div>
+    <% end %>
+  </div>
+</div>

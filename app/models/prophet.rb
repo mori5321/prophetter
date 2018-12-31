@@ -4,6 +4,8 @@ class Prophet < ApplicationRecord
   scope :published_in_x_minutes, -> x_minute { where("published_at < ?", Time.zone.now + x_minute.minutes) }
   scope :not_published, -> { where(published: false) }
 
+  include DateTimeHelper
+
   def tweet!
     client = TwitterClient.new(self.user)
     if client.post(tweet_text)
@@ -15,6 +17,6 @@ class Prophet < ApplicationRecord
 
   private
     def tweet_text
-      "#{self.text} /#{self.created_at}からの予言 #profetter https://prophetter.herokuapp.com/"
+      "#{self.text} \n\n prophetted in #{formatted_date_with_wday(self.created_at)} \n #profetter https://prophetter.herokuapp.com/"
     end
 end

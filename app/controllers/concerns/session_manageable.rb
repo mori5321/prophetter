@@ -10,7 +10,7 @@ module SessionManageable
       !!session[:user_id]
     end
 
-    def authenticate
+    def authenticate!
       return if user_signed_in?
       redirect_to root_path, alert: "Please Logging In"
     end
