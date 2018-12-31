@@ -7,7 +7,7 @@
       <li class="uk-active">
         <% if user_signed_in?  %>
           <div class="uk-inline">
-            <%= link_to "Prophetする", new_prophet_path, class: "uk-button uk-button-default uk-text-default round-button" %>
+            <%- link_to "Prophetする", new_prophet_path, class: "uk-button uk-button-default uk-text-default round-button" %>
             <%= image_tag current_user.image_url, class: "avatar " %>
             <div uk-dropdown="mode: click">
               <ul class="uk-nav uk-dropdown-nav">
@@ -17,6 +17,7 @@
                 <li><a href="#">Item</a></li>
                 <li><a href="#">Item</a></li>
                 <li class="uk-nav-divider"></li> -->
+                <li><%= link_to "Prophetする", new_prophet_path %></li>
                 <li><%= link_to "Sign Out", "/logout" %></li>
               </ul>
             </div>
