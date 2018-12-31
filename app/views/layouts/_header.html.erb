@@ -7,22 +7,26 @@
       <li class="uk-active">
         <% if user_signed_in?  %>
           <div class="uk-inline">
-            <%= link_to "予言する", new_prophet_path, class: "uk-button uk-button-default uk-text-default", style: "border-radius: 20px;" %>
+            <%= link_to "Prophetする", new_prophet_path, class: "uk-button uk-button-default uk-text-default round-button" %>
             <%= image_tag current_user.image_url, class: "avatar " %>
             <div uk-dropdown="mode: click">
               <ul class="uk-nav uk-dropdown-nav">
-                <li class="uk-active"><a href="#">Active</a></li>
+                <!-- <li class="uk-active"><a href="#">Active</a></li>
                 <li><a href="#">Item</a></li>
                 <li class="uk-nav-header">Header</li>
                 <li><a href="#">Item</a></li>
                 <li><a href="#">Item</a></li>
-                <li class="uk-nav-divider"></li>
+                <li class="uk-nav-divider"></li> -->
                 <li><%= link_to "Sign Out", "/logout" %></li>
               </ul>
             </div>
           </div>
         <% else %>
-          <%= link_to 'Twitterでログイン', "/auth/twitter" %>
+          <div class="uk-inline">
+            <%= link_to "/auth/twitter", class: "uk-button uk-button-default uk-text-default round-button" do %>
+              ログイン  <span uk-icon="icon: twitter; ratio: 1" class="uk-text-secondary"></span>
+            <% end %>
+          </div>
         <% end %>
       </li>
     </ul>
