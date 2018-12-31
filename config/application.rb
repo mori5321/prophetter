@@ -15,5 +15,9 @@ module Prophetter
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+
+    # TODO: 多言語化と同時にUserごとの時間設定ができるようにする
+    # https://easyramble.com/multiple-user-time-zone-with-rails.html
+    config.time_zone = 'Tokyo'
   end
 end

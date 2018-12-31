@@ -22,6 +22,6 @@
 
 set :environment, :production
 
-every 1.minutes do
-  runner "Prophets"
+every 3.minutes do
+  runner "ProphetterCronService.exec!"
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_31_055615) do
+ActiveRecord::Schema.define(version: 2018_12_31_060238) do
 
   create_table "prophets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "text", null: false
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 2018_12_31_055615) do
     t.datetime "updated_at", null: false
     t.string "access_token", null: false
     t.string "access_token_secret", null: false
+    t.string "time_zone"
   end
 
 end
