@@ -12,7 +12,7 @@ class User < ApplicationRecord
     user.image_url = image_url
     user.access_token = auth.extra.access_token.token
     user.access_token_secret = auth.extra.access_token.secret
-
+    user.screen_name = auth.extra.raw_info.screen_name
 
     user.save
     return user
