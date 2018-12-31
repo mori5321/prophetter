@@ -29,9 +29,11 @@
 
 
 <script>
-flatpickr("#calendar", {
-  enableTime: true,
-  time_24hr: true,
-  minDate: "today"
-});
+window.onload = function() {
+  flatpickr("#calendar", {
+    enableTime: true,
+    time_24hr: true,
+    minDate: "today"
+  });
+}
 </script>
