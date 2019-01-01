@@ -4,7 +4,12 @@
     <p class="uk-text-center">Twitterで目標達成をProphet(予言)しよう。</p>
     <div class="uk-text-center uk-margin">
       <% if user_signed_in? %>
-        <%= link_to "Prophetする", new_prophet_path, class: "uk-button uk-button-secondary uk-width-1-2 uk-width-1-3@m round-button" %>
+        <div>
+          <%= link_to "Prophetする", new_prophet_path, class: "uk-button uk-button-secondary uk-width-2-3 uk-width-1-2@s uk-width-1-3@m round-button uk-margin-small" %>
+        </div>
+        <div>
+          <%= link_to "みんなのProphet", prophets_path, class: "uk-button uk-button-default uk-width-2-3 uk-width-1-2@s uk-width-1-3@m round-button uk-margin-small" %>
+        </div>
       <% else %>
         <%= link_to "/auth/twitter", class: "uk-button uk-button-secondary uk-width-1-2 uk-width-1-3@m round-button" do %>
           ログイン    <span uk-icon="icon: twitter; ratio: 1" class="uk-text-white"></span>
