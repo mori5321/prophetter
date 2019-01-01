@@ -1,0 +1,48 @@
+<div class="uk-section uk-section-default">
+  <div class="uk-container">
+    <h3 class="uk-heading-line">目標達成を予言しよう。</h3>
+    <p>NY大のPeterGollwtz氏の研究(2009)で、人は目標を誰かに宣言することで達成感を得てしまい、目標の達成確率が下がってしまうことが実証されました。</p>
+
+    <p>
+      <small>
+        参考文献
+        <br>
+        <%= link_to "When Intentions Go Public/PeterGollwtz(2009)", "https://www.psych.nyu.edu/gollwitzer/09_Gollwitzer_Sheeran_Seifert_Michalski_When_Intentions_.pdf" %>
+        <br>
+        <%= link_to "Keep Your Goals to Yourself/Derek Sivers", "https://www.ted.com/talks/derek_sivers_keep_your_goals_to_yourself/transcript?language=en" %>
+      </small>
+    </p>
+    <h3 class="uk-heading-line">Prophetterとは</h3>
+    <p>Prophetterは、目標宣言ではなく、達成予言のためのWebアプリケーションです。</p>
+    <h4 class="uk-heading-line">STEP1</h4>
+    <p>使い方は簡単。まず目標と達成予定日を入力します。「◯◯達成した」と過去形で書くのがコツです。</p>
+    <h4 class="uk-heading-line">STEP2</h4>
+    <p>達成予定日が来たら自動ツイートされます。それまでにがんばって目標達成しましょう！</p>
+    <%= image_tag "prophetter.001.png", size: "500x500" %>
+
+    <h3 class="uk-heading-line">Prophetしよう。</h3>
+    <p>使い方が理解できましたか? 早速Prophetして目標達成に一歩近づきましょう！</p>
+
+    <div class="uk-text-center uk-margin">
+      <% if user_signed_in? %>
+        <div>
+          <%= link_to "Prophetする", new_prophet_path, class: "uk-button uk-button-secondary uk-width-2-3 uk-width-1-2@s uk-width-1-3@m round-button uk-margin-small" %>
+        </div>
+        <div>
+          <%= link_to "みんなのProphet", prophets_path, class: "uk-button uk-button-default uk-width-2-3 uk-width-1-2@s uk-width-1-3@m round-button uk-margin-small" %>
+        </div>
+      <% else %>
+        <div>
+          <%= link_to "/auth/twitter", class: "uk-button uk-button-secondary uk-width-2-3 uk-width-1-2@s uk-width-1-3@m round-button uk-margin-small" do %>
+          ログインする    <span uk-icon="icon: twitter; ratio: 1" class="uk-text-white"></span>
+          <% end %>
+        </div>
+        <div>
+          <%= link_to "みんなのProphet", prophets_path, class: "uk-button uk-button-default uk-width-2-3 uk-width-1-2@s uk-width-1-3@m round-button uk-margin-small" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+

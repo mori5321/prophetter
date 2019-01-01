@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   get '/logout', to: "sessions#destroy"
 
   resources :prophets, only: [:index, :new, :create, :destroy]
+  resources :details, only: :index
 end
