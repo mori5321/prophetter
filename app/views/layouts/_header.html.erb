@@ -1,4 +1,4 @@
-<nav class="uk-navbar uk-padding-small uk-padding-remove-vertical" uk-navbar>
+<nav class="uk-navbar uk-padding-small uk-padding-remove-vertical background-white-transparent" uk-navbar uk-sticky>
   <div class="uk-navbar-left">
     <a class="uk-navbar-item uk-logo" href="/">Prophetter</a>
   </div>
@@ -17,7 +17,11 @@
                 <li><a href="#">Item</a></li>
                 <li><a href="#">Item</a></li>
                 <li class="uk-nav-divider"></li> -->
+
                 <li><%= link_to "Prophetする", new_prophet_path %></li>
+                <li><%= link_to "あなたのProphet", root_path %></li>
+                <li><%= link_to "みんなのProphet", prophets_path %></li>
+                <li class="uk-nav-divider"></li>
                 <li><%= link_to "Sign Out", "/logout" %></li>
               </ul>
             </div>

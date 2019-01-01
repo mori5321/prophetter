@@ -1,4 +1,8 @@
 class ProphetsController < ApplicationController
+  def index
+    @prophets = Prophet.not_published.publishing_order
+  end
+
   def new
     @prophet = Prophet.new
   end
