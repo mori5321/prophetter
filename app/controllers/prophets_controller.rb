@@ -1,6 +1,6 @@
 class ProphetsController < ApplicationController
   def index
-    @prophets = Prophet.not_published.publishing_order
+    @prophets = Prophet.not_published.publishing_order.page(params[:page]).per(3)
   end
 
   def new

@@ -2,8 +2,11 @@
 <div class="uk-container-xsmall uk-container uk-padding uk-padding-remove-vertical uk-width-2-3@s">
   <div class="uk-margin-top">
     <h4 class="uk-heading-line uk-text-center"><span>みんなのProphet</span></h4>
-    <div>
+    <div id="prophets-list">
       <%= render partial: "/prophets/prophet", collection: @prophets %>
+    </div>
+    <div class="uk-hidden">
+      <%= paginate @prophets %>
     </div>
   </div>
 </div>
