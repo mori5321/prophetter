@@ -20,7 +20,7 @@
                     <%= image_tag current_user.image_url, class: "avatar" %>
                   </div>
                   <div class="dropdown-content">
-                    <%= current_user.name %>
+                    <small><%= current_user.name %></small>
                   </div>
                 </div>
                 <li class="uk-nav-divider"></li>
@@ -29,8 +29,6 @@
                 <li><a href="#">Item</a></li>
                 <li><a href="#">Item</a></li>
                 <li class="uk-nav-divider"></li> -->
-
-                <li class="uk-nav-header">Menu</li>
                 <li><%= link_to "Prophetする", new_prophet_path %></li>
                 <li><%= link_to "あなたのProphet", root_path %></li>
                 <li><%= link_to "みんなのProphet", prophets_path %></li>
