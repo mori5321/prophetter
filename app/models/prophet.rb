@@ -18,6 +18,6 @@ class Prophet < ApplicationRecord
 
   private
     def tweet_text
-      "#{self.text} \n\n#{formatted_date_with_wday(self.created_at)}に達成予言された目標です \n#prophetterで目標達成 / https://prophetter.herokuapp.com/"
+      "https://prophetter.herokuapp.com/prophets/#{self.id} \n\n#{formatted_date_with_wday(self.created_at)}に達成予言された目標です \n#prophetterで目標達成 /"
     end
 end
