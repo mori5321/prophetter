@@ -1,4 +1,4 @@
-class ImagesController < ApplicationController
+class OgpImagesController < ApplicationController
   skip_before_action :authenticate!
 
   def ogp
