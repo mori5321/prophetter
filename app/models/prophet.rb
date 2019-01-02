@@ -23,6 +23,6 @@ class Prophet < ApplicationRecord
 
   private
     def tweet_text
-      "https://prophetter.herokuapp.com/prophets/#{self.id}  #prophetterで目標達成"
+      "https://prophetter.herokuapp.com/prophets/#{self.id} #prophetter"
     end
 end
