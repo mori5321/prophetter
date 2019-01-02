@@ -6,4 +6,6 @@ Rails.application.routes.draw do
 
   resources :prophets, only: [:index, :new, :create, :destroy, :show]
   resources :details, only: :index
+
+  get 'images/ogp.png', to: 'images#ogp', as: 'images_ogp'
 end
