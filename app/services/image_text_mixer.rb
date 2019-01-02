@@ -4,7 +4,7 @@ class ImageTextMixer
   BASE_IMAGE_PATH = Rails.root.join("app", "assets", "images", "twitter_post.png")
   # BASE_IMAGE_PATH = "#{RAILS_ROOT}/app/assets/images/twitter_post.png"
   GRAVITY = 'west'
-  TEXT_POSITION = '20,0'
+  TEXT_POSITION = '40,0'
   FONT = Rails.root.join("app", "assets", "fonts", "NotoSansJP-Black.otf")
   # FONT = "#{RAILS_ROOT}/app/assets/font/NotoSansJP-Black.otf"
   FONT_SIZE = 60
