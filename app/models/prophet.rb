@@ -16,6 +16,11 @@ class Prophet < ApplicationRecord
     end
   end
 
+  def remaining_date
+    remain = (self.published_at.to_date - Date.today).to_i
+    remain > 0 ? remain : 0 ;
+  end
+
   private
     def tweet_text
       "https://prophetter.herokuapp.com/prophets/#{self.id}  #prophetterで目標達成"
