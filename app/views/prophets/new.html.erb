@@ -9,7 +9,7 @@
           <%= f.label :published_at, "達成予定", class: "uk-form-label" %>
           <small>※この日時にTweetが自動投稿されます</small>
           <div>
-            <%= f.text_field :published_at, required: true, id: "calendar" %>
+            <%= f.datetime_field :published_at, required: true, id: "calendar" %>
           </div>
         </div>
 
