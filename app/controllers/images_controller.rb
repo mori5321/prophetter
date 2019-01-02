@@ -1,4 +1,6 @@
 class ImagesController < ApplicationController
+  skip_before_action :authenticate!
+
   def ogp
     text = ogp_params[:text] || "Sample"
     image = ImageTextMixer.build(text).tempfile.open.read
