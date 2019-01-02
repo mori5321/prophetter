@@ -4,6 +4,5 @@ window.onload = function() {
     enableTime: true,
     time_24hr: true,
     minDate: "today",
-    disableMobile: "true"
   });
 }
