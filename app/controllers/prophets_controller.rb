@@ -5,6 +5,10 @@ class ProphetsController < ApplicationController
     @prophets = Prophet.includes(:user).not_published.publishing_order.page(params[:page]).per(10)
   end
 
+  def show
+    @prophet = Prophet.find(params[:id])
+  end
+
   def new
     @prophet = Prophet.new
   end
