@@ -9,15 +9,16 @@
           <%= f.label :published_at, "達成予定", class: "uk-form-label" %>
           <small>※この日時にTweetが自動投稿されます</small>
           <div>
-            <%= f.datetime_field :published_at, required: true, id: "calendar" %>
+            <!-- TODO: スマホブラウザだと年選択がつかいにくい -->
+            <%= f.text_field :published_at, required: true, id: "calendar" %>
           </div>
         </div>
 
         <div class="uk-margin">
-          <%= f.label :text, "予言ツイート(200文字まで)", class: "uk-form-label" %>
+          <%= f.label :text, "予言ツイート(50文字以内推奨)", class: "uk-form-label" %>
           <small>※達成することを過去形で予言しましょう</small>
           <div>
-            <%= f.text_area :text, class: "uk-textarea", rows: 4, required: true, placeholder: placeholder, maxlength: 200  %>
+            <%= f.text_area :text, class: "uk-textarea", rows: 2, required: true, placeholder: placeholder, maxlength: 200  %>
           </div>
         </div>
 
