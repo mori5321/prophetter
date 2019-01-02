@@ -10,8 +10,8 @@ class ImageTextMixer
   FONT_SIZE = 60
   INDENTATION_COUNT = 15
 
-  def self.build(text)
-    text = prepare_text(text)
+  def self.build(text, date)
+    text = prepare_text(text, date)
     image = MiniMagick::Image.open(BASE_IMAGE_PATH)
     image.combine_options do |config|
       config.font FONT
@@ -23,7 +23,8 @@ class ImageTextMixer
   end
 
   private
-    def self.prepare_text(text)
-      text.scan(/.{1,#{INDENTATION_COUNT}}/).join("\n")
+    def self.prepare_text(text ,date)
+      date + "\n" + text.scan(/.{1,#{INDENTATION_COUNT}}/).join("\n")
+
     end
 end

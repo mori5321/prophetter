@@ -3,7 +3,8 @@ class OgpImagesController < ApplicationController
 
   def ogp
     text = ogp_params[:text] || "Sample"
-    image = ImageTextMixer.build(text).tempfile.open.read
+    date = ogp_params[:date] || Date.today.strftime('%Y/%m/%d')
+    image = ImageTextMixer.build(text, date).tempfile.open.read
     send_data image, type: 'image/png', disposition: 'inline'
   end
 
