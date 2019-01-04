@@ -2,8 +2,8 @@
   <meta name="twitter:card" content="summary_large_image">
   <!-- <meta name="twitter:site" content="#"> -->
   <meta name="twitter:creator" content="@<%= @prophet.user.screen_name %>">
-  <meta name="twitter:title" content="<%= @prophet.created_at.strftime("%Y/%m/%d") + 'に達成が予言された目標' %>">
-  <meta name="twitter:description" content="<%= @prophet.text %>">
+  <meta name="twitter:title" content="【Prophetter】Twitterで未来日記をつけよう">
+  <meta name="twitter:description" content="<%= @prophet.created_at.strftime("%Y/%m/%d") + 'につけられた未来日記' %>">
   <% url = "https://prophetter.herokuapp.com/ogp_images/ogp.png?text=" + @prophet.text + "&date=" + @prophet.published_at.strftime('%Y/%m/%d')  %>
   <meta name="twitter:image" content="<%= url %>">
 </head>
