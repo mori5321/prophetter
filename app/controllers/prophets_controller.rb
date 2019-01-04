@@ -1,6 +1,12 @@
 class ProphetsController < ApplicationController
+  skip_before_action :authenticate!, only: [:index, :show]
+
   def index
-    @prophets = Prophet.not_published.publishing_order
+    @prophets = Prophet.includes(:user).not_published.publishing_order.page(params[:page]).per(10)
+  end
+
+  def show
+    @prophet = Prophet.find(params[:id])
   end
 
   def new

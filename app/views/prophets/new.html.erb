@@ -9,23 +9,30 @@
           <%= f.label :published_at, "達成予定", class: "uk-form-label" %>
           <small>※この日時にTweetが自動投稿されます</small>
           <div>
+            <!-- TODO: スマホブラウザだと年選択がつかいにくい -->
             <%= f.text_field :published_at, required: true, id: "calendar" %>
           </div>
         </div>
 
         <div class="uk-margin">
-          <%= f.label :text, "予言ツイート(200文字まで)", class: "uk-form-label" %>
+          <%= f.label :text, "予言ツイート(50文字以内推奨)", class: "uk-form-label" %>
           <small>※達成することを過去形で予言しましょう</small>
           <div>
-            <%= f.text_area :text, class: "uk-textarea", rows: 4, required: true, placeholder: placeholder, maxlength: 200  %>
+            <%= f.text_area :text, class: "uk-textarea", rows: 2, required: true, placeholder: placeholder, maxlength: 200  %>
           </div>
         </div>
 
-        <div class="uk-margin uk-flex uk-flex-center">
-          <%= f.submit '投稿予約', class: "uk-button uk-button-secondary round-button" %>
+        <div class="uk-margin">
+          <div class="uk-flex uk-flex-center">
+            <%= f.submit '投稿予約', class: "uk-button uk-button-secondary round-button uk-width-2-3 uk-width-1-2@s uk-width-1-3@m uk-margin-small" %>
+          </div>
+          <div class="uk-margin uk-flex uk-flex-center">
+            <small><%= link_to "TOPへ戻る", root_path, class: "uk-margin-small uk-text-muted" %></small>
+          </div>
         </div>
       </fieldset>
     <% end %>
   </div>
 </div>
 
+`

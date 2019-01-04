@@ -16,8 +16,13 @@ class Prophet < ApplicationRecord
     end
   end
 
+  def remaining_date
+    remain = (self.published_at.to_date - Date.today).to_i
+    remain > 0 ? remain : 0 ;
+  end
+
   private
     def tweet_text
-      "#{self.text} \n\n prophetted in #{formatted_date_with_wday(self.created_at)} \n #prophetter https://prophetter.herokuapp.com/"
+      "https://prophetter.herokuapp.com/prophets/#{self.id} #prophetter"
     end
 end

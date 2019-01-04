@@ -7,17 +7,28 @@
       <li class="uk-active">
         <% if user_signed_in?  %>
           <div class="uk-inline">
-            <%- link_to "Prophetする", new_prophet_path, class: "uk-button uk-button-default uk-text-default round-button" %>
-            <%= image_tag current_user.image_url, class: "avatar " %>
+            <!-- <div>
+              <%= link_to "Menu", new_prophet_path, class: "uk-button uk-button-default uk-text-default round-button" %>
+            </div> -->
+            <button class="uk-button uk-button-default uk-text-default round-button">
+              Menu
+            </button>
             <div uk-dropdown="mode: click">
               <ul class="uk-nav uk-dropdown-nav">
+                <div class="dropdown-profile">
+                  <div class="dropdown-content">
+                    <%= image_tag current_user.image_url, class: "avatar" %>
+                  </div>
+                  <div class="dropdown-content">
+                    <small><%= current_user.name %></small>
+                  </div>
+                </div>
+                <li class="uk-nav-divider"></li>
                 <!-- <li class="uk-active"><a href="#">Active</a></li>
                 <li><a href="#">Item</a></li>
-                <li class="uk-nav-header">Header</li>
                 <li><a href="#">Item</a></li>
                 <li><a href="#">Item</a></li>
                 <li class="uk-nav-divider"></li> -->
-
                 <li><%= link_to "Prophetする", new_prophet_path %></li>
                 <li><%= link_to "あなたのProphet", root_path %></li>
                 <li><%= link_to "みんなのProphet", prophets_path %></li>

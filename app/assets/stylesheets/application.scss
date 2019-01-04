@@ -21,9 +21,14 @@
 // @import "uikit/uikit-theme.scss";
 
 
+// Only Lighther & Thin
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP:100,300&subset=japanese');
+
+
 *, body, h1, h2, h3, h4, h5, h6, p, ul, li, div, span {
-  font-family: 'Helvetica-Neue', 'Noto Sans Japanese', '游ゴシック Medium', '游ゴシック体', 'Yu Gothic Medium', YuGothic, 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+  font-family: 'Helvetica-Neue', 'Noto Sans JP', '游ゴシック Medium', '游ゴシック体', 'Yu Gothic Medium', YuGothic, 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
   font-weight: lighter;
+  font-display: swap;
 }
 
 a {

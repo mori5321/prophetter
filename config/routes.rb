@@ -4,5 +4,8 @@ Rails.application.routes.draw do
   get '/auth/:provider/callback', to: "sessions#create"
   get '/logout', to: "sessions#destroy"
 
-  resources :prophets, only: [:index, :new, :create, :destroy]
+  resources :prophets, only: [:index, :new, :create, :destroy, :show]
+  resources :details, only: :index
+
+  get 'ogp_images/ogp.png', to: 'ogp_images#ogp'
 end
