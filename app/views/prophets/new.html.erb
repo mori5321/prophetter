@@ -3,6 +3,7 @@
 
 <div class="uk-container-xsmall uk-container uk-padding uk-padding-remove-vertical uk-width-2-3@s">
   <div class="uk-margin-top">
+    <h4 class="uk-heading-line">投稿する</h4>
     <%= form_for @prophet do |f| %>
       <fieldset class="uk-fieldset">
         <div class="uk-margin">
@@ -26,6 +27,9 @@
           <div class="uk-flex uk-flex-center">
             <%= f.submit '投稿予約', class: "uk-button uk-button-secondary round-button uk-width-2-3 uk-width-1-2@s uk-width-1-3@m uk-margin-small" %>
           </div>
+
+          <%= render 'prophets/modal' %>
+
           <div class="uk-margin uk-flex uk-flex-center">
             <small><%= link_to "TOPへ戻る", root_path, class: "uk-margin-small uk-text-muted" %></small>
           </div>
@@ -35,4 +39,3 @@
   </div>
 </div>
 
-`
