@@ -1,31 +1,26 @@
 <div class="uk-section uk-section-default">
   <div class="uk-container">
-    <h3 class="uk-heading-line">目標は宣言してはいけない</h3>
-    <p>NY大のPeterGollwtz氏の研究(2009)で、人は目標を誰かに宣言することで達成感を得てしまい、目標の達成確率が下がってしまうことが実証されました。</p>
-    <p>Gollwtzは、誰かに話すことで達成したかのような錯覚(Social Reality)を得てしまうことが原因であるとしました。</p>
+    <h3 class="uk-heading-line">未来日記とは</h3>
+    <p>未来日記とは、自分の目標やなりたい姿を、あたかもできたかのように日記のように書くことです</p>
+    <small>参考: https://matome.naver.jp/odai/2139532986976967201</small>
 
-    <p>
-      <small>
-        参考文献
-        <br>
-        <%= link_to "When Intentions Go Public/PeterGollwtz(2009)", "https://www.psych.nyu.edu/gollwitzer/09_Gollwitzer_Sheeran_Seifert_Michalski_When_Intentions_.pdf" %>
-        <br>
-        <%= link_to "Keep Your Goals to Yourself/Derek Sivers", "https://www.ted.com/talks/derek_sivers_keep_your_goals_to_yourself/transcript?language=en" %>
-      </small>
-    </p>
-    <h3 class="uk-heading-line">Prophetterとは</h3>
-    <p>Prophetterは、目標宣言ではなく、<b>目標達成を予言する</b>ためのWebアプリケーションです。目標を自分の心の中に秘めつつ、<b>「予言した期日までに達成しないと」</b>というプレッシャーであなたの目標達成の後押しします。</p>
+    <h3 class="uk-heading-line">過去形で書こう！</h3>
+    <p>コツは日記と同じように、「~だった。」「~ができた。」「~するようになった。」のように過去形で書くことです。これにより、脳が現在の自分とのギャップを埋めようとし、自分を行動へと向かわせてくれます。</p>
+
+
+    <h3 class="uk-heading-line">Prophetterは目標達成をサポートする未来日記アプリです。</h3>
+    <p>Prophetは英語で予言を表します。予言のようにあなたの夢や目標を現実にします。</p>
     <h5>使い方は簡単2ステップ</h5>
     <%= image_tag "prophetter.001.png", size: "500x500" %>
 
-    <h3 class="uk-heading-line">Prophetしよう。</h3>
-    <p>使い方が理解できましたか? 早速Prophetして目標達成に一歩近づきましょう！</p>
+    <h3 class="uk-heading-line">未来日記を書いてみよう。</h3>
+    <p>使い方が理解できましたか? さっそくProphetterで未来日記を書いて目標達成に一歩近づきましょう！</p>
 
     <div class="uk-text-center uk-margin">
       <% if user_signed_in? %>
         <div>
           <%= link_to new_prophet_path, class: "uk-button uk-button-secondary uk-width-2-3 uk-width-1-2@s uk-width-1-3@m round-button uk-margin-small" do %>
-            Prophetする <span uk-icon="icon: twitter; ratio: 1" class="uk-text-white"></span>
+            未来日記を書く <span uk-icon="icon: twitter; ratio: 1" class="uk-text-white"></span>
           <% end %>
         </div>
         <div>
@@ -34,7 +29,7 @@
       <% else %>
         <div>
           <%= link_to "/auth/twitter?option=post", class: "uk-button uk-button-secondary uk-width-2-3 uk-width-1-2@s uk-width-1-3@m round-button uk-margin-small" do %>
-          Prophetしてみる    <span uk-icon="icon: twitter; ratio: 1" class="uk-text-white"></span>
+          未来日記を書く    <span uk-icon="icon: twitter; ratio: 1" class="uk-text-white"></span>
           <% end %>
         </div>
         <div>
