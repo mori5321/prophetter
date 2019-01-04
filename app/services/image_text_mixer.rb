@@ -1,7 +1,7 @@
 class ImageTextMixer
   require "mini_magick"
 
-  BASE_IMAGE_PATH = Rails.root.join("app", "assets", "images", "twitter_post.png")
+  BASE_IMAGE_PATH = Rails.root.join("app", "assets", "images", "twitter_post_v2.png")
   # BASE_IMAGE_PATH = "#{RAILS_ROOT}/app/assets/images/twitter_post.png"
   GRAVITY = 'west'
   TEXT_POSITION = '40,0'
