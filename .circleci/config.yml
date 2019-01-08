@@ -10,6 +10,7 @@ jobs:
        - image: circleci/ruby:2.6.0-node-browsers
          environment:
             DB_HOST: '127.0.0.1'
+            RAILS_ENV: 'test'
        - image: circleci/mysql:5.6
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -44,8 +45,8 @@ jobs:
           command: dockerize -wait tcp://localhost:3306 -timeout 1m
 
       # Database setup
-      - run: bundle exec rake db:create RAILS_ENV="test"
-      - run: bundle exec rake db:schema:load RAILS_ENV="test"
+      - run: bundle exec rake db:create
+      - run: bundle exec rake db:schema:load
 
 
       # run tests!
