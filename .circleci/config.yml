@@ -40,7 +40,7 @@ jobs:
           key: v1-dependencies-{{ checksum "Gemfile.lock" }}
 
       - run:
-        name: 'wait for db'
+          name: 'wait for db'
           command: dockerize -wait tcp://localhost:3306 -timeout 1m
 
       # Database setup
