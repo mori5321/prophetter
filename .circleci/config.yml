@@ -58,6 +58,7 @@ jobs:
 
             bundle exec rspec $TEST_FILES
 
+
       # collect reports
       - store_test_results:
           path: /tmp/test-results
