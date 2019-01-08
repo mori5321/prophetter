@@ -27,7 +27,7 @@ development:
 test:
   <<: *default
   database: prophetter_test
-  host: <%= ENV['DB_HOST'] %> || 'localhost'
+  host: <%= ENV["DB_HOST"] ||  "localhost" %>
   # <%= ENV['DB_HOST'] %> is for CircleCi
 
 # As with config/secrets.yml, you never want to store sensitive information,
