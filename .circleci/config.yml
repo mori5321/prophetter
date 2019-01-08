@@ -8,8 +8,6 @@ jobs:
     docker:
       # specify the version you desire here
        - image: circleci/ruby:2.6.0-node-browsers
-          environment:
-            DB_HOST: '127.0.0.1'
        - image: circleci/mysql:5.6
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -31,6 +29,8 @@ jobs:
 
       - run:
           name: install dependencies
+          environment:
+            DB_HOST: '127.0.0.1'
           command: |
             bundle install --jobs=4 --retry=3 --path vendor/bundle
 
