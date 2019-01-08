@@ -19,5 +19,15 @@ module Prophetter
     # TODO: 多言語化と同時にUserごとの時間設定ができるようにする
     # https://easyramble.com/multiple-user-time-zone-with-rails.html
     config.time_zone = 'Tokyo'
+
+
+    config.generators do |g|
+      g.test_framework :rspec,
+      fixtures: false,
+      view_specs: false,
+      helper_specs: false,
+      routing_specs: false,
+      request_specs: false
+    end
   end
 end
