@@ -59,14 +59,17 @@ jobs:
 
             bundle exec rspec $TEST_FILES
       
-    deploy:
-      name: Deploy Master to Heroku
-
-
-
       # collect reports
       - store_test_results:
           path: /tmp/test-results
       - store_artifacts:
           path: /tmp/test-results
           destination: test-results
+
+
+    - deploy:
+        name: Deploy Master to Heroku
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
+            fi
