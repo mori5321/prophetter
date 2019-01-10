@@ -60,13 +60,13 @@ jobs:
 
             bundle exec rspec $TEST_FILES
       
-      deployment:
+      - deployment:
         production:
             branch: master
             heroku:
             appname: prophetter
 
-          
+           
 
       # collect reports
       - store_test_results:
