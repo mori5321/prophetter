@@ -30,7 +30,7 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
-      - run: bundle update bundler
+      - run: gem install bundler -v '2.0.1'
 
       - run:
           name: install dependencies
