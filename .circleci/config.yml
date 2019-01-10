@@ -30,7 +30,7 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
-      - run: gem install bundler -v '2.0.1'
+      - run: gem install bundler -v 
 
       - run:
           name: install dependencies
@@ -60,11 +60,11 @@ jobs:
 
             bundle exec rspec $TEST_FILES
       
-    deploy:
-      name: Deploy Master to Heroku
-      command: |
-        if ["${CIRCLE_BRANCH}" == "master"]; then
-          git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
+      - deploy:
+          name: Deploy Master to Heroku
+          command: |
+            if ["${CIRCLE_BRANCH}" == "master"]; then
+                git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
 
           
 
