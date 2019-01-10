@@ -30,6 +30,8 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
+      - run: bundle update bundler
+
       - run:
           name: install dependencies
           command: |
