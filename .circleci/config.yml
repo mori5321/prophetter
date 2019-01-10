@@ -67,9 +67,8 @@ jobs:
           destination: test-results
 
 
-      - run:
+      - deploy:
           name: Deploy Master to Heroku
-          command: |
-            if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
-            fi
+          command: |	
+            if ["${CIRCLE_BRANCH}" == "master"]; then	
+                git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
