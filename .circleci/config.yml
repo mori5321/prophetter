@@ -34,7 +34,7 @@ jobs:
       - run:
           name: install dependencies
           command: |
-            bundle _2.0.1_ install --jobs=4 --retry=3 --path vendor/bundle
+            bundle install --jobs=4 --retry=3 --path vendor/bundle
 
       - save_cache:
           paths:
