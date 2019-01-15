@@ -65,7 +65,7 @@ jobs:
       - store_artifacts:
           path: /tmp/test-results
     
-  deploy:gi
+  deploy:
     steps:
       - checkout
       - run:
