@@ -66,8 +66,6 @@ jobs:
           path: /tmp/test-results
     
   deploy:
-    docker:
-      - image: circleci/ruby:2.6.0-node-browsers
     steps:
       - checkout
       - run:
