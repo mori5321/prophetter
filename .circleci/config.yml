@@ -34,8 +34,7 @@ jobs:
       - run:
           name: install dependencies
           command: |
-            bundle install --jobs=4 --retry=3
-            # bundle install --jobs=4 --retry=3 --path vendor/bundle
+            bundle install --jobs=4 --retry=3 -path vendor/bundle
 
       - save_cache:
           paths:
@@ -47,8 +46,8 @@ jobs:
           command: dockerize -wait tcp://localhost:3306 -timeout 1m
 
       # Database setup
-      - run: bundle exec rake db:create
-      - run: bundle exec rake db:schema:load
+      - run: bundle exec rails db:create
+      - run: bundle exec rails db:schema:load
 
 
       # run tests!
