@@ -30,6 +30,7 @@ jobs:
           # fallback to using the latest cache if no exact match is found
 
       - run: gem install bundler -v '2.0.1'
+      - run: ENV BUNDLERVERSION=2.0.1
 
       - run:
           name: install dependencies
