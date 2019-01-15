@@ -11,6 +11,7 @@ jobs:
          environment:
             DB_HOST: '127.0.0.1'
             RAILS_ENV: 'test'
+            BUNDLER_VERSION: '2.0.1'
        - image: circleci/mysql:5.6
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -30,7 +31,6 @@ jobs:
           # fallback to using the latest cache if no exact match is found
 
       - run: gem install bundler -v '2.0.1'
-      - run: ENV BUNDLERVERSION=2.0.1
 
       - run:
           name: install dependencies
