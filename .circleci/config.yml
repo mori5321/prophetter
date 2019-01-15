@@ -28,7 +28,8 @@ jobs:
           keys:
           - v1-dependencies-{{ checksum "Gemfile.lock" }}
           # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
+
+      - run: gem install bundler -v '2.0.1'
 
       - run:
           name: install dependencies
@@ -54,18 +55,16 @@ jobs:
           name: run tests
           command: |
             mkdir /tmp/test-results
-            TEST_FILES="$(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)"
+            TEST_FILES="$(circleci tests glob "spec/**/*_spec.rb" | circleci tests  split --split-by=timings)"
 
             bundle exec rspec $TEST_FILES
-
-
+      
       # collect reports
       - store_test_results:
           path: /tmp/test-results
       - store_artifacts:
           path: /tmp/test-results
-          destination: test-results
-    
+          destination: test-results    
     deploy:
       steps:
         - checkout
