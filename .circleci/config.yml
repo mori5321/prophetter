@@ -36,12 +36,12 @@ jobs:
       - run:
           name: install dependencies
           command: |
-            bundle _2.0.1_ install --jobs=4 --retry=3 --path vendor/bundle
+            bundle _2.0.1_ install --jobs=4 --retry=3
 
-      - save_cache:
-          paths:
-            - ./vendor/bundle
-          key: v1-dependencies-{{ checksum "Gemfile.lock" }}
+      # - save_cache:
+      #     paths:
+      #       - ./vendor/bundle
+      #     key: v1-dependencies-{{ checksum "Gemfile.lock" }}
 
       - run:
           name: 'wait for db'
