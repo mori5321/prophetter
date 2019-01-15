@@ -65,7 +65,7 @@ jobs:
       - store_artifacts:
           path: /tmp/test-results
     
-  deploy:
+  deploy:gi
     steps:
       - checkout
       - run:
@@ -81,8 +81,8 @@ workflows:
     jobs:
       - build
       - deploy:
-        requires:
-          - build
-        filters:
-          branches:
-            only: master
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
