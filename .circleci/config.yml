@@ -11,7 +11,8 @@ jobs:
          environment:
             DB_HOST: '127.0.0.1'
             RAILS_ENV: 'test'
-            BUNDLER_VERSION: '2.0.1'
+            BUNDLER_VERSION: '2.0.1' #dockerの中でdefalutのBUNDLER_VERSIONが決まっている。それを上書き。
+            BUILDPACK_URL: https://github.com/heroku/heroku-buildpack-ruby.git
        - image: circleci/mysql:5.6
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -68,6 +69,9 @@ jobs:
     
   deploy:
     machine: true
+    environment:
+      - BUNDLER_VERSION: '2.0.1' #dockerの中でdefalutのBUNDLER_VERSIONが決まっている。それを上書き。
+      - BUILDPACK_URL: https://github.com/heroku/heroku-buildpack-ruby.git 
     steps:
       - checkout
       - run:
